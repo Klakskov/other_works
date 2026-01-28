@@ -1,4 +1,4 @@
-package com.example.work.application.domain;
+package com.example.work.application.domain.input;
 
 import lombok.*;
 
@@ -9,7 +9,7 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class GetProductInput {
+public class GetProductAppInput {
     private OffsetDateTime date;
     private String productId;
     private String chainId;

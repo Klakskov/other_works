@@ -7,7 +7,7 @@ import com.example.work.application.domain.response.GetProductAppResponse;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring") // generates Spring bean
-public interface ProductMapper {
+public interface PriceMapper {
 
     GetProductAppInput toAppInput(GetPriceRequest product);
     GetProductResponse toResponse(GetProductAppResponse appResponse);
