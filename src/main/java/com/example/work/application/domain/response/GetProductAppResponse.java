@@ -3,7 +3,7 @@ package com.example.work.application.domain.response;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -11,10 +11,10 @@ import java.time.OffsetDateTime;
 @NoArgsConstructor
 @Builder
 public class GetProductAppResponse {
-    private String productId;
-    private String chainId;
+    private long productId;
+    private long chainId;
     private BigDecimal rateToApply;
     private BigDecimal finalPriceToApply;
-    private OffsetDateTime startDate;
-    private OffsetDateTime endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
 }

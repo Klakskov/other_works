@@ -2,7 +2,7 @@ package com.example.work.application.domain.input;
 
 import lombok.*;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -10,9 +10,9 @@ import java.time.OffsetDateTime;
 @NoArgsConstructor
 @Builder
 public class GetProductAppInput {
-    private OffsetDateTime date;
-    private String productId;
-    private String chainId;
+    private LocalDateTime date;
+    private long productId;
+    private long chainId;
     private int limit;
     private int offset;
 }

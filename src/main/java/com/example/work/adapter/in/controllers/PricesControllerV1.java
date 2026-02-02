@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/v1/prices")
@@ -18,7 +20,7 @@ public class PricesControllerV1 {
     private final PriceMapper priceMapper;
 
     @GetMapping()
-    public GetProductResponse getProduct(GetPriceRequest requestData) {
+    public List<GetProductResponse> getProduct(GetPriceRequest requestData) {
         return priceMapper.toResponse(
                 priceServicePortIn.findByData(
                         priceMapper.toAppInput(requestData)

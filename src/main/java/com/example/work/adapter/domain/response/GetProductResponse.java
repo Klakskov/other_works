@@ -3,16 +3,16 @@ package com.example.work.adapter.domain.response;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 public record GetProductResponse(
-        String productId,
-        String chainId,
+        long productId,
+        long chainId,
         BigDecimal rateToApply,
         BigDecimal finalPriceToApply,
         @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-        OffsetDateTime startDate,
+        LocalDateTime startDate,
         @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-        OffsetDateTime endDate
+        LocalDateTime endDate
 ) {
 }
