@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 public class GetProductAppResponse {
     private long productId;
     private long chainId;
-    private BigDecimal rateToApply;
-    private BigDecimal finalPriceToApply;
+    private BigDecimal rate;
+    private BigDecimal price;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 }

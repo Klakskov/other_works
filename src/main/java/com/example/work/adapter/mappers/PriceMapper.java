@@ -6,6 +6,7 @@ import com.example.work.adapter.out.db.PriceEntity;
 import com.example.work.application.domain.input.GetProductAppInput;
 import com.example.work.application.domain.response.GetProductAppResponse;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -16,5 +17,8 @@ public interface PriceMapper {
     GetProductResponse toResponse(GetProductAppResponse appResponse);
     List<GetProductResponse> toResponse(List<GetProductAppResponse> appResponse);
 
-    List<GetProductAppResponse> toGetProductAppResponse(List<PriceEntity> priceList);
+    @Mapping(source = "priceList", target = "rate")
+    GetProductAppResponse toGetProductAppResponse(PriceEntity priceList);
+
+    List<GetProductAppResponse> toGetProductAppResponseList(List<PriceEntity> priceList);
 }

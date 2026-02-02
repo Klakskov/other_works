@@ -8,8 +8,8 @@ import java.time.LocalDateTime;
 public record GetProductResponse(
         long productId,
         long chainId,
-        BigDecimal rateToApply,
-        BigDecimal finalPriceToApply,
+        BigDecimal rate,
+        BigDecimal price,
         @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
         LocalDateTime startDate,
         @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)

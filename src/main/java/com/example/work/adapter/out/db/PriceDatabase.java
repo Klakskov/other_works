@@ -24,6 +24,6 @@ public class PriceDatabase implements PriceDatabasePortOut {
                 appInput.getChainId()
         );
 
-        return priceMapper.toGetProductAppResponse(priceList);
+        return priceMapper.toGetProductAppResponseList(priceList);
     }
 }
