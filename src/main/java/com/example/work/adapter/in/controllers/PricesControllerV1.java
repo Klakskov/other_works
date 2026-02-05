@@ -5,11 +5,10 @@ import com.example.work.adapter.domain.response.GetProductResponse;
 import com.example.work.adapter.mappers.PriceMapper;
 import com.example.work.application.ports.in.PriceServicePortIn;
 import lombok.AllArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -20,8 +19,8 @@ public class PricesControllerV1 {
     private final PriceMapper priceMapper;
 
     @GetMapping()
-    public List<GetProductResponse> getProduct(GetPriceRequest requestData) {
-        return priceMapper.toResponse(
+    public GetProductResponse getProduct(@Validated GetPriceRequest requestData) {
+        return priceMapper.toGetProductAppResponse(
                 priceServicePortIn.findByData(
                         priceMapper.toAppInput(requestData)
                 )

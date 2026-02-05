@@ -1,8 +1,9 @@
 package com.example.work.adapter.mappers;
 
+import com.example.work.adapter.domain.entities.PriceEntity;
 import com.example.work.adapter.domain.request.GetPriceRequest;
 import com.example.work.adapter.domain.response.GetProductResponse;
-import com.example.work.adapter.out.db.PriceEntity;
+import com.example.work.application.domain.PriceCore;
 import com.example.work.application.domain.input.GetProductAppInput;
 import com.example.work.application.domain.response.GetProductAppResponse;
 import org.mapstruct.Mapper;
@@ -18,7 +19,7 @@ public interface PriceMapper {
     List<GetProductResponse> toResponse(List<GetProductAppResponse> appResponse);
 
     @Mapping(source = "priceList", target = "rate")
-    GetProductAppResponse toGetProductAppResponse(PriceEntity priceList);
+    GetProductResponse toGetProductAppResponse(PriceCore priceCore);
+    PriceCore toPriceCoreList(PriceEntity entityList);
 
-    List<GetProductAppResponse> toGetProductAppResponseList(List<PriceEntity> priceList);
 }

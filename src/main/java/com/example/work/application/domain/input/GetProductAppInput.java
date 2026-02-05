@@ -13,6 +13,4 @@ public class GetProductAppInput {
     private LocalDateTime date;
     private long productId;
     private long chainId;
-    private int limit;
-    private int offset;
 }

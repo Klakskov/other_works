@@ -1,22 +1,17 @@
-package com.example.work.adapter.out.db;
+package com.example.work.application.domain;
 
-import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "PRICES")
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PriceEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PriceCore {
     private Long id;
     private Long brandId;
     private LocalDateTime startDate;

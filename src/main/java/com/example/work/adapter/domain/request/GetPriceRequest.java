@@ -1,6 +1,7 @@
 package com.example.work.adapter.domain.request;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
@@ -10,15 +11,10 @@ public record GetPriceRequest(
         @NotNull
         LocalDateTime date,
         @NotNull
+        @PositiveOrZero
         Long productId,
         @NotNull
-        Long chainId,
-        Integer limit,
-        Integer offset
+        @PositiveOrZero
+        Long chainId
 ) {
-        public GetPriceRequest {
-                if (limit == null) limit = 100;
-                if(offset == null) offset = 0;
-                if (date == null) date = LocalDateTime.now();
-        }
 }
